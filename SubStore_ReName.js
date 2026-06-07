@@ -98,8 +98,8 @@ function operator(proxies) {
             let rawPrefix = customPrefix;
             let finalPrefix;
 
-            // 情况1：没有 prefix 参数 或 参数为空
-            if (rawPrefix === undefined || rawPrefix === '') {
+            // 情况1：没有 prefix 参数 或 参数为default
+            if (rawPrefix === undefined || (rawPrefix && rawPrefix.trim() === 'default')) {
                 finalPrefix = DEFAULT_PREFIX.replace(/\${subName}/g, subName);
             }
             // 情况2：覆盖模式 - 以 = 开头
