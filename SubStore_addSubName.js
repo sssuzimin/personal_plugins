@@ -1,8 +1,8 @@
 // 智能前缀脚本 - 支持覆盖模式
-// 导入url:https://raw.githubusercontent.com/sssuzimin/personal_plugins/refs/heads/main/SubStore_addSubName.js#prefix=
+// 导入url:https://raw.githubusercontent.com/sssuzimin/personal_plugins/refs/heads/main/SubStore_addSubName.js#prefix=default
 // 参数名：prefix
 // 规则示例（假设订阅名称为“我的机场”）：
-// 1. 不填或留空 → 默认 【我的机场】
+// 1. 不填或填 default → 默认 【我的机场】
 // 2. 填括号对（如 []、【】、()、{}、「」、『』） → 括号包裹订阅名称，例如：填 [] → [我的机场]
 // 3. 填包含 %s 的字符串 → %s 会被替换为订阅名称，例如：填 %s： → 我的机场：
 // 4. 填以 = 开头的字符串（如 =suzimin） → 等号后面的内容直接作为固定前缀（忽略订阅名称），例如：填 =suzimin → suzimin
@@ -19,8 +19,8 @@ function operator(proxies) {
         let rawPrefix = $arguments.prefix;
         let finalPrefix;
 
-        // 情况1：没有 prefix 参数 或 参数为空
-        if (rawPrefix === undefined || rawPrefix === '') {
+        // 情况1：没有 prefix 参数 或 参数为 "default"
+        if (rawPrefix === undefined || rawPrefix === 'default') {
             finalPrefix = DEFAULT_PREFIX.replace(/\${subName}/g, subName);
         } 
         // 情况2：覆盖模式 - 以 = 开头
