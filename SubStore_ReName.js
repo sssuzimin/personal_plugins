@@ -89,7 +89,7 @@ function operator(proxies) {
 
     // ========== 第二步：添加智能前缀（如果启用） ==========
     if (enablePrefix) {
-        const DEFAULT_PREFIX = '【${subName}】';
+        const DEFAULT_PREFIX = '[${subName}]';
         for (let i = 0; i < proxies.length; i++) {
             const proxy = proxies[i];
             const subName = proxy._subDisplayName || proxy._subName;
