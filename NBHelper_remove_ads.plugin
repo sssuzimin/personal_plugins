@@ -1,0 +1,69 @@
+#!name=NB
+#!desc=
+#!author=sssuzimin
+
+# 
+# 1. 
+# 2. “” NB “”
+# 3. 
+# 4. “#”“#”
+# 5.  App DOMAIN-SUFFIX  App
+# 6.  /nb/app 
+
+[Rule]
+#  SDK 
+# (J0398782393/ad_type=1)(J4080843144/ad_type=11)(J6699070721/ad_type=3)
+#  /api/zysdk?isEncrypt=2&v=1 
+# 
+DOMAIN,sdk.zhangyuyidong.cn,REJECT
+
+# Zero //
+# 
+DOMAIN,api-events.8ziben.com,REJECT
+
+# / 8ziben  DSP 
+# “#”
+DOMAIN,api-dsp.8ziben.com,REJECT
+
+# Zero /
+#  App 
+DOMAIN,open.e.kuaishou.cn,REJECT
+
+# Zero / CDN 
+#  App  yximgs.com 
+DOMAIN-SUFFIX,yximgs.com,REJECT
+
+# Zero 
+#  App “#”
+DOMAIN-SUFFIX,adkwai.com,REJECT
+
+# /CDN 
+# 
+# /
+DOMAIN,media-qhxn-fj-person.qh6oss.ctyunxs.cn,REJECT
+
+# Zero 
+# 
+DOMAIN,v66-ad.ndcjl.com,REJECT
+
+# =====  =====
+
+# /sdk/lurl  SDK /
+# 
+# “#”
+# DOMAIN,sdklog.zhangyuyidong.cn,REJECT
+
+# 8ziben  SDK /
+# 
+# “#”
+# DOMAIN,api-cfg.8ziben.com,REJECT
+
+# =====  =====
+
+#  /nb/app IP
+# /nb/app  NB /“”
+# URL-REGEX,^http://.+/nb/app,REJECT
+
+# 
+# REJECT-200 
+# URL-REGEX,^http://nbtool8\.com:9527/nb/app,REJECT-200
